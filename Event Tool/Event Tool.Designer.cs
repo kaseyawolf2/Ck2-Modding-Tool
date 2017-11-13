@@ -613,6 +613,7 @@
             this.CurEveBox.Name = "CurEveBox";
             this.CurEveBox.Size = new System.Drawing.Size(121, 21);
             this.CurEveBox.TabIndex = 72;
+            this.CurEveBox.Text = "To Come";
             // 
             // label29
             // 
@@ -629,6 +630,7 @@
             this.SerText.Name = "SerText";
             this.SerText.Size = new System.Drawing.Size(100, 20);
             this.SerText.TabIndex = 74;
+            this.SerText.Text = "Soon tm";
             // 
             // label30
             // 

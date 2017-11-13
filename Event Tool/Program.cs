@@ -169,7 +169,7 @@ namespace Event_Tool
             string ModFile;
             ModFile = @"name=""" + Modname + @"""";
             ModFile = ModFile + @"
-path=""" + Ck2Path + "\\" + Modname;
+path=""mod\" + Modname + @"""";
             if (Tags != "")
             {
                 ModFile = ModFile + @"

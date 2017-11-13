@@ -91,8 +91,8 @@ namespace Event_Tool
             }
             #endregion
 
-            dir = Program.LocalizationDir + @"\" + EveGroupBox.Text + ".cvs";
-            Reader.CreateFileIfNotExist(Program.LocalizationDir, EveGroupBox.Text + ".cvs");
+            dir = Program.LocalizationDir + @"\" + EveGroupBox.Text + ".csv";
+            Reader.CreateFileIfNotExist(Program.LocalizationDir, EveGroupBox.Text + ".csv");
             Reader.SaveLoc(dir, Program.EventLocalizaion);
 
             //Saving Event Groups
@@ -192,7 +192,7 @@ namespace Event_Tool
     id = {0}.{2}
     desc = EVTDESC{0}.{2}";
 
-            if (false)
+            if (Program.EventInfo.Find(x => x.EventGroup == EveGroupBox.SelectedText).NumInGroup == 0)
             {
                 string Nms = @"namespace = {0}
 ";
