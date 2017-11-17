@@ -1,6 +1,6 @@
 ﻿namespace Event_Tool
 {
-    partial class Form1
+    partial class NwEvent
     {
         /// <summary>
         /// Required designer variable.

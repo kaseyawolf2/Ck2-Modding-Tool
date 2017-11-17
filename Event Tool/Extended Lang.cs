@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Event_Tool
 {
-    public partial class Form3 : Form
+    public partial class MoreLangs : Form
     {
-        public Form3()
+        public MoreLangs()
         {
             InitializeComponent();
         }

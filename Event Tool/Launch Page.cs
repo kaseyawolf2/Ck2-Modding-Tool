@@ -12,7 +12,7 @@ namespace Event_Tool
 {
     public partial class Launch_Page : Form
     {
-        public static Form1 NwEvent;
+        public static NwEvent NwEvent;
         public Launch_Page()
         {
             InitializeComponent();
@@ -58,14 +58,10 @@ namespace Event_Tool
                     return;
                 }
                 Program.Modname = System.IO.Path.GetFileName(Mod.SelectedPath);
-                Program.ModInfo.Clear();
+
                 Reader.LoadModInfo();
 
                 Program.LoadModinfo();
-
-                Reader.LoadEventInfo();
-
-
 
             }
         }
@@ -107,7 +103,6 @@ namespace Event_Tool
                 MessageBox.Show("Please Load/Create a Mod", "No Mod Data", MessageBoxButtons.OK);
                 return;
             }
-            Program.Modname = ModNameText.Text;
             if (!System.IO.File.Exists(Program.CurrentModFolderPath + @"\events"))
             {
                 Reader.CreateFolder(Program.CurrentModFolderPath + @"\events");
@@ -118,7 +113,7 @@ namespace Event_Tool
             }
 
             Program.Makenamespace();
-            NwEvent = new Form1();
+            NwEvent = new NwEvent();
 
             Reader.LoadEventInfo();
 
@@ -131,6 +126,34 @@ namespace Event_Tool
             NwEvent.Show();
         }
 
+        private void BtNwBuilding_Click(object sender, EventArgs e)
+        {
+            if (!Program.ModLoaded)
+            {
+                MessageBox.Show("Please Load/Create a Mod", "No Mod Data", MessageBoxButtons.OK);
+                return;
+            }
+            if (!System.IO.File.Exists(Program.CurrentModFolderPath + @"\common"))
+            {
+                Reader.CreateFolder(Program.CurrentModFolderPath + @"\common");
+            }
+            if (!System.IO.File.Exists(Program.CurrentModFolderPath + @"\common\buildings"))
+            {
+                Reader.CreateFolder(Program.CurrentModFolderPath + @"\common\buildings");
+            }
+            if (!System.IO.File.Exists(Program.CurrentModFolderPath + @"\localisation"))
+            {
+                Reader.CreateFolder(Program.CurrentModFolderPath + @"\localisation");
+            }
+
+
+
+
+
+        }
+
         #endregion
+
+
     }
 }

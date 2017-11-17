@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace Event_Tool
 {
-    public partial class Form1 : Form
+    public partial class NwEvent : Form
     {
-        public Form1()
+        public NwEvent()
         {
             InitializeComponent();
         }
@@ -21,14 +21,14 @@ namespace Event_Tool
                 MessageBox.Show("Please Enter a Namespace, Id, Event Group, and Event Type", "No Data Entered", MessageBoxButtons.OK);
                 return;
             }
+            
+
+
+            Reader.CreateFileIfNotExist(Program.CurrentModFolderPath + @"\events", EveGroupBox.Text + ".txt");
+
             string dir = Program.CurrentModFolderPath + @"\events\" + EveGroupBox.Text + ".txt";
-
-
-                Reader.CreateFileIfNotExist(Program.CurrentModFolderPath + @"\events", EveGroupBox.Text + ".txt");
-
-
             //Save Event
-            Reader.SaveFileSting(dir, ParseEvent());
+            Reader.SaveFileSting(dir, ParseEvent(),true);
             Program.EventInfo.Find(x => x.EventGroup == EveGroupBox.Text).NumInGroup ++;
 
             //Adding Localization
@@ -191,7 +191,7 @@ namespace Event_Tool
             Event_String = @"{1} = {{
     id = {0}.{2}
     desc = EVTDESC{0}.{2}";
-
+            Reader.LoadEventInfo();
             if (Program.EventInfo.Find(x => x.EventGroup == EveGroupBox.SelectedText).NumInGroup == 0)
             {
                 string Nms = @"namespace = {0}
@@ -390,7 +390,7 @@ border = {21}";
 
         private void MoreLangs_Click(object sender, EventArgs e)
         {
-            Form3 FRM = Program.FRM;
+            MoreLangs FRM = Program.EML;
             FRM.EnglishText.Text = DescText.Text;
             FRM.Eng1.Text = Opt1BtText.Text;
             FRM.Eng2.Text = Opt2BtText.Text;

@@ -9,49 +9,49 @@ namespace Event_Tool
     public class Reader
     {
         // Use this for initialization
-#region Mod Info
-        public static void LoadModInfo()
-        {
-            //prevents the folder path being spamed with files if there is no file there
-            string dir = Program.ModsFolderPath + @"\" + Program.Modname + @"\ModInfo.xml";  
-            if (File.Exists(dir))
-            {
-                Program.ModInfo.Clear();
-                using (StreamReader sr = new StreamReader(dir))
-                {                    
-                    Program.ModInfo.Add(new Program.ModInfoClass { ModInfoName = sr.ReadLine() });                    
-                    Program.ModInfo[0].PicName = sr.ReadLine();                   
-                    Program.ModInfo[0].Tags = sr.ReadLine();                  
-                }
-            }
-            else
-            {
-                System.Diagnostics.Debug.WriteLine("No File Path Found");
-                return;
-            }
-        }
-
-        public static void SaveModInfo(string dir, List<Program.ModInfoClass> list)
-        {
-            if (File.Exists(dir))
-            {
-                using (StreamWriter sw = new StreamWriter(dir))
+        #region Mod Info
+                public static void LoadModInfo()
                 {
-                    foreach (Program.ModInfoClass C in list)
+                    //prevents the folder path being spamed with files if there is no file there
+                    string dir = Program.ModsFolderPath + @"\" + Program.Modname + @"\ModInfo.xml";  
+                    if (File.Exists(dir))
                     {
-                        sw.WriteLine(C.ToString());
+                        Program.ModInfo.Clear();
+                        using (StreamReader sr = new StreamReader(dir))
+                        {                    
+                            Program.ModInfo.Add(new Program.ModInfoClass { ModInfoName = sr.ReadLine() });                    
+                            Program.ModInfo[0].PicName = sr.ReadLine();                   
+                            Program.ModInfo[0].Tags = sr.ReadLine();                  
+                        }
+                    }
+                    else
+                    {
+                        System.Diagnostics.Debug.WriteLine("No File Path Found");
+                        return;
                     }
                 }
-            }
-            else
-            {
-                System.Diagnostics.Debug.WriteLine("No File Path Found");
-                return;
-            }
-        }
-        #endregion
 
-#region Event Info
+                public static void SaveModInfo(string dir, List<Program.ModInfoClass> list)
+                {
+                    if (File.Exists(dir))
+                    {
+                        using (StreamWriter sw = new StreamWriter(dir))
+                        {
+                            foreach (Program.ModInfoClass C in list)
+                            {
+                                sw.WriteLine(C.ToString());
+                            }
+                        }
+                    }
+                    else
+                    {
+                        System.Diagnostics.Debug.WriteLine("No File Path Found");
+                        return;
+                    }
+                }
+                #endregion
+
+        #region Event Info
         public static void LoadEventInfo()
         {
             //prevents the folder path being spamed with files if there is no file there
@@ -107,7 +107,11 @@ namespace Event_Tool
         }
         #endregion
 
-#region Localization
+        #region Building Info
+
+#endregion
+
+        #region Localization
         public static void SaveLoc(string dir,List<Program.LocalizationList> list)
         {
             if (File.Exists(dir))
@@ -128,6 +132,7 @@ namespace Event_Tool
         }
 
         #endregion
+
         public static void CreateFileIfNotExist(string PathOfFolderItsIn, string FileName)
         {
             if (!File.Exists(PathOfFolderItsIn))
@@ -137,11 +142,11 @@ namespace Event_Tool
         }
 
 
-        public static void SaveFileSting(string dir, string FileSting)
+        public static void SaveFileSting(string dir, string FileSting,bool AppendToEnd)
         {
             if (File.Exists(dir))
             {
-                using (StreamWriter sw = new StreamWriter(dir,true))
+                using (StreamWriter sw = new StreamWriter(dir, AppendToEnd))
                 {
                     sw.WriteLine(FileSting);
                 }

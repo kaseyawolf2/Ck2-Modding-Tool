@@ -1,6 +1,6 @@
 ﻿namespace Event_Tool
 {
-    partial class Form3
+    partial class MoreLangs
     {
         /// <summary>
         /// Required designer variable.

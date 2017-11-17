@@ -15,10 +15,11 @@ namespace Event_Tool
         #region Vars
         //Static Forms
         public static Launch_Page LP;
-        public static Form3 FRM;
+        public static MoreLangs EML;
         //Mod Loaded
         public static bool ModLoaded = false;
-
+        //Debug
+        public static bool DebugOn = false;
         //Mod Info
         public static string Modname;
         public static string Namespace;
@@ -103,21 +104,25 @@ namespace Event_Tool
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             LP = new Launch_Page();
-            FRM = new Form3();
+            EML = new MoreLangs();
             Application.Run(LP);
         }
 
         static void Prestart()
         {
             Ck2Path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Paradox Interactive\Crusader Kings II";
-            // Debug
 
-            Ck2Path = Ck2Path + @"\MOD-TOOL-DEBUG";
 
+            //debug
+            if (DebugOn)
+            {
+                
+                Ck2Path = Ck2Path + @"\MOD-TOOL-DEBUG";
+            }
             ModsFolderPath = Ck2Path + @"\mod";
             //MessageBox.Show(Ck2Path, "No Data Entered", MessageBoxButtons.OK);
-        }
 
+        }
 
 
         #region New/Save/Load Mod Info
@@ -149,7 +154,7 @@ namespace Event_Tool
             {
                 Reader.CreateFile(ModsFolderPath, ModFileName);
             }
-            Reader.SaveFileSting(CurrentModFolderPath + ".mod", MakeModfile());
+            Reader.SaveFileSting(CurrentModFolderPath + ".mod", MakeModfile(),false);
 
             // Creating ModInfo File
             MakeModInfo();
@@ -199,6 +204,9 @@ picture=""" + PicPath + @"""";
 
         static public void LoadModinfo()
         {
+            
+            Reader.LoadModInfo();
+
             //Mod Name
             Modname = ModInfo[0].ModInfoName;
             LP.ModNameText.Text = Modname;
