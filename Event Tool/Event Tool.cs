@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace Event_Tool
+namespace Ck2ModdingTool
 {
     public partial class NwEvent : Form
     {
@@ -390,13 +390,13 @@ border = {21}";
 
         private void MoreLangs_Click(object sender, EventArgs e)
         {
-            MoreLangs FRM = Program.EML;
-            FRM.EnglishText.Text = DescText.Text;
-            FRM.Eng1.Text = Opt1BtText.Text;
-            FRM.Eng2.Text = Opt2BtText.Text;
-            FRM.Eng3.Text = Opt3BtText.Text;
-            FRM.Eng4.Text = Opt4BtText.Text;
-            FRM.Show();
+            Program.EML = new MoreLangs();
+            Program.EML.EnglishText.Text = DescText.Text;
+            Program.EML.Eng1.Text = Opt1BtText.Text;
+            Program.EML.Eng2.Text = Opt2BtText.Text;
+            Program.EML.Eng3.Text = Opt3BtText.Text;
+            Program.EML.Eng4.Text = Opt4BtText.Text;
+            Program.EML.Show();
         }
         public static void UpdateFromLoc()
         {

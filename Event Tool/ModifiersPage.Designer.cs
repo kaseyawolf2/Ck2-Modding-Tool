@@ -1,6 +1,6 @@
 ﻿namespace Ck2ModdingTool
 {
-    partial class Output
+    partial class ModifiersPage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.OutputText = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // OutputText
-            // 
-            this.OutputText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.OutputText.Location = new System.Drawing.Point(12, 12);
-            this.OutputText.Name = "OutputText";
-            this.OutputText.Size = new System.Drawing.Size(736, 529);
-            this.OutputText.TabIndex = 0;
-            this.OutputText.Text = "";
-            // 
-            // Form2
+            // Modifiers_Page
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(760, 553);
-            this.Controls.Add(this.OutputText);
-            this.Name = "Form2";
-            this.Text = "Form2";
+            this.ClientSize = new System.Drawing.Size(1008, 583);
+            this.Name = "Modifiers_Page";
+            this.Text = "Modifiers_Page";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        public System.Windows.Forms.RichTextBox OutputText;
     }
 }

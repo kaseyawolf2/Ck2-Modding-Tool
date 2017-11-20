@@ -1,4 +1,4 @@
-﻿namespace Event_Tool
+﻿namespace Ck2ModdingTool
 {
     partial class Rename_Group
     {

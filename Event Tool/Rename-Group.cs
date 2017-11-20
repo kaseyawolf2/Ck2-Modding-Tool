@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Event_Tool
+namespace Ck2ModdingTool
 {
     public partial class Rename_Group : Form
     {
@@ -28,10 +28,10 @@ namespace Event_Tool
             
             SelBox.SelectedItem = NameTxt.Text;
             
-            Launch_Page.NwEvent.EveGroupBox.Items.Clear();
+            Program.NE.EveGroupBox.Items.Clear();
             foreach (var item in Program.EventInfo)
             {
-                Launch_Page.NwEvent.EveGroupBox.Items.Add(item.EventGroup.ToString());
+                Program.NE.EveGroupBox.Items.Add(item.EventGroup.ToString());
             }
             Program.SaveEventGroups();
             Close();

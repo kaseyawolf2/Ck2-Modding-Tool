@@ -8,11 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Event_Tool
+namespace Ck2ModdingTool
 {
     public partial class Launch_Page : Form
     {
-        public static NwEvent NwEvent;
         public Launch_Page()
         {
             InitializeComponent();
@@ -98,6 +97,7 @@ namespace Event_Tool
 
         private void BtNwEvent_Click(object sender, EventArgs e)
         {
+            Program.NE = new NwEvent();
             if (!Program.ModLoaded)
             {
                 MessageBox.Show("Please Load/Create a Mod", "No Mod Data", MessageBoxButtons.OK);
@@ -113,21 +113,21 @@ namespace Event_Tool
             }
 
             Program.Makenamespace();
-            NwEvent = new NwEvent();
 
             Reader.LoadEventInfo();
 
 
-            NwEvent.EveGroupBox.Items.Clear();
+            Program.NE.EveGroupBox.Items.Clear();
             foreach (var item in Program.EventInfo)
             {
-                NwEvent.EveGroupBox.Items.Add( item.EventGroup.ToString() );
+                Program.NE.EveGroupBox.Items.Add( item.EventGroup.ToString() );
             }
-            NwEvent.Show();
+            Program.NE.Show();
         }
 
         private void BtNwBuilding_Click(object sender, EventArgs e)
         {
+            Program.NB = new NwBuilding();
             if (!Program.ModLoaded)
             {
                 MessageBox.Show("Please Load/Create a Mod", "No Mod Data", MessageBoxButtons.OK);
@@ -146,14 +146,18 @@ namespace Event_Tool
                 Reader.CreateFolder(Program.CurrentModFolderPath + @"\localisation");
             }
 
-
+            Program.NB.Show();
 
 
 
         }
 
+
         #endregion
 
+        private void BtNwArtifact_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

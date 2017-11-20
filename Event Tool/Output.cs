@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Event_Tool
+namespace Ck2ModdingTool
 {
     public partial class Output : Form
     {

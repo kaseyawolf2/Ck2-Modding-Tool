@@ -1,4 +1,4 @@
-﻿namespace Event_Tool
+﻿namespace Ck2ModdingTool
 {
     partial class Launch_Page
     {
@@ -40,7 +40,7 @@
             this.ModFolder = new System.Windows.Forms.Button();
             this.SaveModBt = new System.Windows.Forms.Button();
             this.BtNwBuilding = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BtNwArtifact = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -162,14 +162,15 @@
             this.BtNwBuilding.UseVisualStyleBackColor = true;
             this.BtNwBuilding.Click += new System.EventHandler(this.BtNwBuilding_Click);
             // 
-            // button2
+            // BtNwArtifact
             // 
-            this.button2.Location = new System.Drawing.Point(220, 118);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 23);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "New";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BtNwArtifact.Location = new System.Drawing.Point(220, 118);
+            this.BtNwArtifact.Name = "BtNwArtifact";
+            this.BtNwArtifact.Size = new System.Drawing.Size(97, 23);
+            this.BtNwArtifact.TabIndex = 15;
+            this.BtNwArtifact.Text = "New Artifact";
+            this.BtNwArtifact.UseVisualStyleBackColor = true;
+            this.BtNwArtifact.Click += new System.EventHandler(this.BtNwArtifact_Click);
             // 
             // button3
             // 
@@ -256,7 +257,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 233);
+            this.ClientSize = new System.Drawing.Size(428, 235);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button10);
@@ -266,7 +267,7 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.BtNwArtifact);
             this.Controls.Add(this.BtNwBuilding);
             this.Controls.Add(this.SaveModBt);
             this.Controls.Add(this.ModFolder);
@@ -297,7 +298,7 @@
         private System.Windows.Forms.Button ModFolder;
         private System.Windows.Forms.Button SaveModBt;
         private System.Windows.Forms.Button BtNwBuilding;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtNwArtifact;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;

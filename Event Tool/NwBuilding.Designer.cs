@@ -1,4 +1,4 @@
-﻿namespace Event_Tool
+﻿namespace Ck2ModdingTool
 {
     partial class NwBuilding
     {
@@ -76,6 +76,7 @@
             this.ModifierText = new System.Windows.Forms.RichTextBox();
             this.HoldingCB = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
+            this.ModifierBt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // checkBox1
@@ -488,11 +489,22 @@
             this.label22.TabIndex = 53;
             this.label22.Text = "Holding";
             // 
+            // ModifierBt
+            // 
+            this.ModifierBt.Location = new System.Drawing.Point(392, 330);
+            this.ModifierBt.Name = "ModifierBt";
+            this.ModifierBt.Size = new System.Drawing.Size(75, 23);
+            this.ModifierBt.TabIndex = 54;
+            this.ModifierBt.Text = "Modifiers";
+            this.ModifierBt.UseVisualStyleBackColor = true;
+            this.ModifierBt.Click += new System.EventHandler(this.ModifierBt_Click);
+            // 
             // NwBuilding
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1118, 565);
+            this.Controls.Add(this.ModifierBt);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.HoldingCB);
             this.Controls.Add(this.label1);
@@ -598,5 +610,6 @@
         private System.Windows.Forms.RichTextBox ModifierText;
         private System.Windows.Forms.ComboBox HoldingCB;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Button ModifierBt;
     }
 }

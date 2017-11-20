@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Event_Tool
+namespace Ck2ModdingTool
 {
     public partial class MoreLangs : Form
     {
@@ -20,11 +13,11 @@ namespace Event_Tool
         private void ExitBt_Click_1(object sender, EventArgs e)
         {
             
-            Launch_Page.NwEvent.DescText.Text = EnglishText.Text;
-            Launch_Page.NwEvent.Opt1BtText.Text = Eng1.Text;
-            Launch_Page.NwEvent.Opt2BtText.Text = Eng2.Text;
-            Launch_Page.NwEvent.Opt3BtText.Text = Eng3.Text;
-            Launch_Page.NwEvent.Opt4BtText.Text = Eng4.Text;
+            Program.NE.DescText.Text = EnglishText.Text;
+            Program.NE.Opt1BtText.Text = Eng1.Text;
+            Program.NE.Opt2BtText.Text = Eng2.Text;
+            Program.NE.Opt3BtText.Text = Eng3.Text;
+            Program.NE.Opt4BtText.Text = Eng4.Text;
 
             Program.frdesc = FrenchText.Text;
             Program.fr1 = Fr1.Text;

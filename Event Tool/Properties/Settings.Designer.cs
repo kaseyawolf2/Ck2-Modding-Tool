@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Event_Tool.Properties
+namespace Ck2ModdingTool.Properties
 {
 
 

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Event_Tool
+namespace Ck2ModdingTool
 {
     public partial class New_Event_Group : Form
     {
@@ -19,7 +19,7 @@ namespace Event_Tool
 
         private void SaveBt_Click(object sender, EventArgs e)
         {
-            Launch_Page.NwEvent.EveGroupBox.Items.Add(NameTxt.Text);
+            Program.NE.EveGroupBox.Items.Add(NameTxt.Text);
             Program.EventInfo.Add(new Program.EventGroupClass { EventGroup = NameTxt.Text });
             Program.SaveEventGroups();
             Close();
