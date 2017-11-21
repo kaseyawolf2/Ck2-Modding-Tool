@@ -17,19 +17,19 @@ namespace Ck2ModdingTool
         int NumCol;
         int Offset = 0;
         //Current List of Modifiers
-        public List<Program.WordList> Modifiers;
+        public List<Program.WordList> CurrentModifiers;
 
         public ModifiersPage(List<Program.WordList> ModifiersToShow)
         {
-            Modifiers = ModifiersToShow;
+            CurrentModifiers = ModifiersToShow;
             InitializeComponent();
         }
             
         private void ModifiersPage_ResizeEnd(object sender, EventArgs e)
         {
             Program.MP.Controls.Clear();
-            NumCol = (Modifiers.Count / (Program.MP.Height / 30)) + 1;
-            DrawModifiers(Modifiers,Offset);
+            NumCol = (CurrentModifiers.Count / (Program.MP.Height / 30)) + 1;
+            DrawModifiers(CurrentModifiers,Offset);
             DrawBt();
             Program.MP.Refresh();
         }
@@ -40,27 +40,57 @@ namespace Ck2ModdingTool
             Button Okbutton = new Button { Text = "Save", Name = "SaveBt", Location = new Point(Program.MP.Size.Width - 95, Program.MP.Size.Height - 65) };
             Okbutton.Click += new EventHandler(SaveBt_Click);
             Program.MP.Controls.Add(Okbutton);
-            NumCol = (Modifiers.Count / (Program.MP.Height / 30)) + 1;
-            HScrollBar bar = new HScrollBar { Width = Program.MP.Size.Width - 150,Location = new Point( 10, Program.MP.Size.Height-55),Name = "ScrollBar1",Maximum = NumCol * 200, Minimum = 0,LargeChange = 100 };
-            bar.DockChanged += new EventHandler(ScrollBar1_Update);
+            NumCol = (CurrentModifiers.Count / (Program.MP.Height / 30)) + 1;
+            HScrollBar bar = new HScrollBar { Width = Program.MP.Size.Width - 150,Location = new Point( 10, Program.MP.Size.Height-55),Name = "ScrollBar1",Maximum = NumCol * 200, Minimum = 0,LargeChange = 100,Value = Offset };
+            bar.ValueChanged += new EventHandler(ScrollBar1_Update);
             Program.MP.Controls.Add(bar);
         }
 
         private void SaveBt_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Shit", "No Data Entered", MessageBoxButtons.OK);
+            string ModifiersString = @"# Modifiers
+";
+            foreach (var Txt in Controls.OfType<TextBox>())
+            {
+                if (Txt.Text == "")
+                {
+                    continue;
+                }
+                ModifiersString += Txt.Name + " = " + Txt.Text + @"
+";
+            }
+            MessageBox.Show(ModifiersString, "No Data Entered", MessageBoxButtons.OK);
+
+
+            Close();
         }
+        
 
         private void ScrollBar1_Update(object sender, EventArgs e)
         {
-            MessageBox.Show("Shit", "No Data Entered", MessageBoxButtons.OK);
             HScrollBar bar = (HScrollBar)sender;
             Offset = bar.Value;
-            Program.MP.Controls.Clear();
-            NumCol = (Modifiers.Count / (Program.MP.Height / 30)) + 1;
-            DrawModifiers(Modifiers, Offset);
-            DrawBt();
+            RemoveLblsAndTxtbx();
+
+            DrawModifiers(CurrentModifiers, Offset);
+
             Program.MP.Refresh();
+        }
+
+        void RemoveLblsAndTxtbx()
+        {
+            foreach (var lbl in Controls.OfType<Label>())
+            {
+                Controls.Remove(lbl);
+            }
+            foreach (var Txt in Controls.OfType<TextBox>())
+            {
+                Controls.Remove(Txt);
+            }
+            if (Controls.OfType<TextBox>().Count() != 0 || Controls.OfType<Label>().Count() != 0)
+            {
+                RemoveLblsAndTxtbx();
+            }
         }
 
         public void DrawModifiers(List<Program.WordList> list, int offset)
@@ -70,8 +100,11 @@ namespace Ck2ModdingTool
 
             int Y = 10;
             int X = -75;
+            X -= offset;
             foreach (var item in list)
             {
+                
+
                 Label label = NewLabel(item.Word, X, Y);
 
 
@@ -112,7 +145,7 @@ namespace Ck2ModdingTool
             TextBox textbox = new TextBox
             {
                 Location = new Point(x, y),
-                Name = Name + "TxtBx",
+                Name = Name,
             };
             return textbox;
         }
