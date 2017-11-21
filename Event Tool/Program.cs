@@ -104,6 +104,8 @@ namespace Ck2ModdingTool
         public static List<EventGroupClass> EventInfo = new List<EventGroupClass>();
         public static List<LocalizationList> EventLocalizaion = new List<LocalizationList>();
         public static List<WordList> Modifiers = new List<WordList>();
+        public static List<WordList> BuildingsModi = new List<WordList>();
+        public static List<WordList> ArtifactModi = new List<WordList>();
 
         #endregion
 
@@ -121,6 +123,8 @@ namespace Ck2ModdingTool
         {
             Ck2Path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Paradox Interactive\Crusader Kings II";
             #region Adding Modifiers to List
+            #region Full modifiers
+
             //Character attribute modifiers
             Modifiers.Add(new WordList() { Word = "diplomacy" });
             Modifiers.Add(new WordList() { Word = "diplomacy_penalty" });
@@ -290,9 +294,25 @@ namespace Ck2ModdingTool
             Modifiers.Add(new WordList() { Word = "max_manpower_mult" });
             Modifiers.Add(new WordList() { Word = "max_population" });
 
+            #endregion
 
 
 
+            #region Adding to Building Modi
+
+
+            //for now just copy full list
+            BuildingsModi = Modifiers;
+
+            #endregion
+            #region Adding to Artifact Modi
+            #endregion
+            #region Adding to ?? Modi
+            #endregion
+            #region Adding to ?? Modi
+            #endregion
+            #region Adding to ?? Modi
+            #endregion
             #endregion
 
             //debug

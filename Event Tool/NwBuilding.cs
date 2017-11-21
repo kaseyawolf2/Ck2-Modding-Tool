@@ -16,7 +16,9 @@ namespace Ck2ModdingTool
         {
             InitializeComponent();
         }
-        
+
+        //Only show modis needed
+        public List<Program.WordList> ModifiersToShow = Program.BuildingsModi;
 
         private void SaveBt_Click(object sender, EventArgs e)
         {
@@ -41,60 +43,16 @@ namespace Ck2ModdingTool
 
         private void ModifierBt_Click(object sender, EventArgs e)
         {
-            Program.MP = new ModifiersPage();
-            DrawModifiers();
-
+            Program.MP = new ModifiersPage(ModifiersToShow);
+            Program.MP.DrawModifiers(ModifiersToShow,0);
+            Program.MP.DrawBt();
             Program.MP.Show();
         }
 
-        public void DrawModifiers()
-        {
-            int MaxY = Program.MP.Height / 30;
-
-            int Y = 10;
-            int X = 14;
-            foreach (var item in Program.Modifiers)
-            {
-                Label label = NewLabel(item.Word, X, Y, item.Word.Length);
-                Program.MP.Controls.Add(label);
+        
 
 
-                TextBox textBox = NewTextBox(item.Word, 125 + X, Y - 3);
-                Program.MP.Controls.Add(textBox);
-
-
-                Y += 28;
-                if (Y >= (MaxY * 28) + 10)
-                {
-                    Y = 10;
-                    X += 235;
-                }
-
-            }
-        }
-
-
-        private Label NewLabel(string Name, int x, int y, int CharCount)
-        {
-            Label label = new Label
-            {
-                Text = Name,
-                Location = new Point(x, y),
-                Name = Name + "Lbl",
-                Width = (CharCount * 6)+7,
-            };
-            return label;
-        }
-
-        private TextBox NewTextBox(string Name, int x, int y)
-        {
-            TextBox textbox = new TextBox
-            {
-                Location = new Point(x, y),
-                Name = Name + "TxtBx",
-            };
-            return textbox;
-        }
+        
 
     }
 }

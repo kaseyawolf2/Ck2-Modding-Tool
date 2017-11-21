@@ -30,13 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // Modifiers_Page
+            // ModifiersPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 583);
-            this.Name = "Modifiers_Page";
-            this.Text = "Modifiers_Page";
+            this.Name = "ModifiersPage";
+            this.Text = "ModifiersPage";
+            this.ResizeEnd += new System.EventHandler(this.ModifiersPage_ResizeEnd);
             this.ResumeLayout(false);
 
         }
