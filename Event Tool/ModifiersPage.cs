@@ -21,8 +21,15 @@ namespace Ck2ModdingTool
 
         public ModifiersPage(List<Program.WordList> ModifiersToShow)
         {
+            Load += new EventHandler(OnLoad);
             CurrentModifiers = ModifiersToShow;
             InitializeComponent();
+        }
+
+        private void OnLoad(object sender, EventArgs e)
+        {
+            DrawModifiers(CurrentModifiers, 0);
+            DrawBt();
         }
             
         private void ModifiersPage_ResizeEnd(object sender, EventArgs e)
@@ -61,7 +68,7 @@ namespace Ck2ModdingTool
             }
             MessageBox.Show(ModifiersString, "No Data Entered", MessageBoxButtons.OK);
 
-
+            Program.MPOutput = ModifiersString;
             Close();
         }
         

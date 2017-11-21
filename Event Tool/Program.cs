@@ -34,6 +34,8 @@ namespace Ck2ModdingTool
         public static string ModsFolderPath;
         public static string CurrentModFolderPath;
         public static string LocalizationDir;
+        //Modifers Page Output
+        public static string MPOutput;
         //More Language Vars
         public static string fr1;
         public static string fr2;

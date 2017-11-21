@@ -17,8 +17,11 @@ namespace Ck2ModdingTool
             InitializeComponent();
         }
 
-        //Only show modis needed
+        //Only show modifiers needed
         public List<Program.WordList> ModifiersToShow = Program.BuildingsModi;
+        //Modifiers String
+        public string ModifiersString;
+
 
         private void SaveBt_Click(object sender, EventArgs e)
         {
@@ -44,15 +47,19 @@ namespace Ck2ModdingTool
         private void ModifierBt_Click(object sender, EventArgs e)
         {
             Program.MP = new ModifiersPage(ModifiersToShow);
-            Program.MP.DrawModifiers(ModifiersToShow,0);
-            Program.MP.DrawBt();
             Program.MP.Show();
+            Program.MP.FormClosed += new FormClosedEventHandler(MPClosed);
         }
 
-        
+        private void MPClosed(object sender, EventArgs e)
+        {
+            Program.MP.FormClosed -= new FormClosedEventHandler(MPClosed);
+            ModifiersString = Program.MPOutput;
+        }
 
 
-        
+
+
 
     }
 }
