@@ -16,6 +16,7 @@ namespace Ck2ModdingTool
         //ints
         int NumCol;
         int Offset = 0;
+        int PrevOffset = 0;
         //Current List of Modifiers
         public List<Program.WordList> CurrentModifiers;
 
@@ -24,8 +25,8 @@ namespace Ck2ModdingTool
             Load += new EventHandler(OnLoad);
             CurrentModifiers = ModifiersToShow;
             InitializeComponent();
-        }
-
+        } 
+    
         private void OnLoad(object sender, EventArgs e)
         {
             DrawModifiers(CurrentModifiers, 0);
@@ -48,7 +49,7 @@ namespace Ck2ModdingTool
             Okbutton.Click += new EventHandler(SaveBt_Click);
             Program.MP.Controls.Add(Okbutton);
             NumCol = (CurrentModifiers.Count / (Program.MP.Height / 30)) + 1;
-            HScrollBar bar = new HScrollBar { Width = Program.MP.Size.Width - 150,Location = new Point( 10, Program.MP.Size.Height-55),Name = "ScrollBar1",Maximum = NumCol * 200, Minimum = 0,LargeChange = 100,Value = Offset };
+            HScrollBar bar = new HScrollBar { Width = Program.MP.Size.Width - 150,Location = new Point( 10, Program.MP.Size.Height-55),Name = "ScrollBar1",Maximum = NumCol * 220, Minimum = 0,LargeChange = 100,Value = Offset };
             bar.ValueChanged += new EventHandler(ScrollBar1_Update);
             Program.MP.Controls.Add(bar);
         }
@@ -76,10 +77,18 @@ namespace Ck2ModdingTool
         private void ScrollBar1_Update(object sender, EventArgs e)
         {
             HScrollBar bar = (HScrollBar)sender;
+            PrevOffset = Offset;
             Offset = bar.Value;
-            RemoveLblsAndTxtbx();
 
-            DrawModifiers(CurrentModifiers, Offset);
+            int diff = Offset - PrevOffset;
+            foreach (var lbl in Controls.OfType<Label>())
+            {
+                lbl.Location = new Point(lbl.Location.X - diff,lbl.Location.Y);
+            }
+            foreach (var Txt in Controls.OfType<TextBox>())
+            {
+                Txt.Location = new Point(Txt.Location.X - diff, Txt.Location.Y);
+            }
 
             Program.MP.Refresh();
         }

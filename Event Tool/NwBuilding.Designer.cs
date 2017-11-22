@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.AddNumberChck = new System.Windows.Forms.CheckBox();
+            this.PortChck = new System.Windows.Forms.CheckBox();
+            this.ScoutingChck = new System.Windows.Forms.CheckBox();
             this.DescText = new System.Windows.Forms.RichTextBox();
             this.SaveBt = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.AiCreationFactorText = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.AiFeudalModifierText = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.AiRepublicModifierText = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.BuildingNameText = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -63,51 +63,50 @@
             this.label14 = new System.Windows.Forms.Label();
             this.PotentialText = new System.Windows.Forms.RichTextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.ExtraTechText = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.CastleConvertText = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.CityConvertText = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.TempleConvertText = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ModifierText = new System.Windows.Forms.RichTextBox();
+            this.TribalConvertText = new System.Windows.Forms.TextBox();
             this.HoldingCB = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
             this.ModifierBt = new System.Windows.Forms.Button();
+            this.ModiText = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // checkBox1
+            // AddNumberChck
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(662, 142);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(132, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "add_number_to_name";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.AddNumberChck.AutoSize = true;
+            this.AddNumberChck.Location = new System.Drawing.Point(662, 142);
+            this.AddNumberChck.Name = "AddNumberChck";
+            this.AddNumberChck.Size = new System.Drawing.Size(132, 17);
+            this.AddNumberChck.TabIndex = 0;
+            this.AddNumberChck.Text = "add_number_to_name";
+            this.AddNumberChck.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // PortChck
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(662, 165);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(44, 17);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "port";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.PortChck.AutoSize = true;
+            this.PortChck.Location = new System.Drawing.Point(662, 165);
+            this.PortChck.Name = "PortChck";
+            this.PortChck.Size = new System.Drawing.Size(44, 17);
+            this.PortChck.TabIndex = 1;
+            this.PortChck.Text = "port";
+            this.PortChck.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // ScoutingChck
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(662, 188);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(66, 17);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "scouting";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.ScoutingChck.AutoSize = true;
+            this.ScoutingChck.Location = new System.Drawing.Point(662, 188);
+            this.ScoutingChck.Name = "ScoutingChck";
+            this.ScoutingChck.Size = new System.Drawing.Size(66, 17);
+            this.ScoutingChck.TabIndex = 2;
+            this.ScoutingChck.Text = "scouting";
+            this.ScoutingChck.UseVisualStyleBackColor = true;
             // 
             // DescText
             // 
@@ -119,7 +118,8 @@
             // 
             // SaveBt
             // 
-            this.SaveBt.Location = new System.Drawing.Point(1031, 530);
+            this.SaveBt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveBt.Location = new System.Drawing.Point(977, 435);
             this.SaveBt.Name = "SaveBt";
             this.SaveBt.Size = new System.Drawing.Size(75, 23);
             this.SaveBt.TabIndex = 6;
@@ -132,57 +132,57 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(644, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 13);
+            this.label2.Size = new System.Drawing.Size(95, 13);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Ai Creation Factor";
+            this.label2.Text = "Ai Creation Factor*";
             // 
-            // textBox2
+            // AiCreationFactorText
             // 
-            this.textBox2.Location = new System.Drawing.Point(741, 55);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 7;
+            this.AiCreationFactorText.Location = new System.Drawing.Point(741, 55);
+            this.AiCreationFactorText.Name = "AiCreationFactorText";
+            this.AiCreationFactorText.Size = new System.Drawing.Size(100, 20);
+            this.AiCreationFactorText.TabIndex = 7;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(644, 84);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 13);
+            this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 10;
-            this.label3.Text = "ai_feudal_modifier";
+            this.label3.Text = "Ai Feudal Modifier";
             // 
-            // textBox3
+            // AiFeudalModifierText
             // 
-            this.textBox3.Location = new System.Drawing.Point(741, 81);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 9;
+            this.AiFeudalModifierText.Location = new System.Drawing.Point(741, 81);
+            this.AiFeudalModifierText.Name = "AiFeudalModifierText";
+            this.AiFeudalModifierText.Size = new System.Drawing.Size(100, 20);
+            this.AiFeudalModifierText.TabIndex = 9;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(635, 110);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 13);
+            this.label4.Size = new System.Drawing.Size(101, 13);
             this.label4.TabIndex = 12;
-            this.label4.Text = "ai_republic_modifier";
+            this.label4.Text = "Ai Republic Modifier";
             // 
-            // textBox4
+            // AiRepublicModifierText
             // 
-            this.textBox4.Location = new System.Drawing.Point(741, 107);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 11;
+            this.AiRepublicModifierText.Location = new System.Drawing.Point(741, 107);
+            this.AiRepublicModifierText.Name = "AiRepublicModifierText";
+            this.AiRepublicModifierText.Size = new System.Drawing.Size(100, 20);
+            this.AiRepublicModifierText.TabIndex = 11;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(12, 15);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 13);
+            this.label5.Size = new System.Drawing.Size(79, 13);
             this.label5.TabIndex = 14;
-            this.label5.Text = "Building Name";
+            this.label5.Text = "Building Name*";
             // 
             // BuildingNameText
             // 
@@ -196,14 +196,14 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(27, 41);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 13);
+            this.label6.Size = new System.Drawing.Size(64, 13);
             this.label6.TabIndex = 15;
-            this.label6.Text = "Description";
+            this.label6.Text = "Description*";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(40, 132);
+            this.label7.Location = new System.Drawing.Point(40, 223);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(47, 13);
             this.label7.TabIndex = 17;
@@ -211,7 +211,7 @@
             // 
             // ReplaceText
             // 
-            this.ReplaceText.Location = new System.Drawing.Point(93, 129);
+            this.ReplaceText.Location = new System.Drawing.Point(93, 220);
             this.ReplaceText.Name = "ReplaceText";
             this.ReplaceText.Size = new System.Drawing.Size(202, 20);
             this.ReplaceText.TabIndex = 16;
@@ -219,15 +219,15 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(51, 158);
+            this.label8.Location = new System.Drawing.Point(43, 132);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(36, 13);
+            this.label8.Size = new System.Drawing.Size(44, 13);
             this.label8.TabIndex = 19;
-            this.label8.Text = "trigger";
+            this.label8.Text = "Trigger*";
             // 
             // TrigText
             // 
-            this.TrigText.Location = new System.Drawing.Point(93, 155);
+            this.TrigText.Location = new System.Drawing.Point(93, 126);
             this.TrigText.Name = "TrigText";
             this.TrigText.Size = new System.Drawing.Size(202, 85);
             this.TrigText.TabIndex = 18;
@@ -287,7 +287,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(310, 132);
+            this.label12.Location = new System.Drawing.Point(310, 223);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(77, 13);
             this.label12.TabIndex = 27;
@@ -295,7 +295,7 @@
             // 
             // UpgradeText
             // 
-            this.UpgradeText.Location = new System.Drawing.Point(392, 129);
+            this.UpgradeText.Location = new System.Drawing.Point(392, 220);
             this.UpgradeText.Name = "UpgradeText";
             this.UpgradeText.Size = new System.Drawing.Size(202, 20);
             this.UpgradeText.TabIndex = 26;
@@ -303,11 +303,11 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(333, 304);
+            this.label13.Location = new System.Drawing.Point(330, 304);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 13);
+            this.label13.Size = new System.Drawing.Size(57, 13);
             this.label13.TabIndex = 29;
-            this.label13.Text = "gold_cost";
+            this.label13.Text = "Gold Cost*";
             // 
             // GoldCostText
             // 
@@ -319,11 +319,11 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(332, 252);
+            this.label15.Location = new System.Drawing.Point(327, 252);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(54, 13);
+            this.label15.Size = new System.Drawing.Size(60, 13);
             this.label15.TabIndex = 33;
-            this.label15.Text = "build_time";
+            this.label15.Text = "Build Time*";
             // 
             // BuildTimeText
             // 
@@ -335,11 +335,11 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(316, 278);
+            this.label16.Location = new System.Drawing.Point(314, 278);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(70, 13);
+            this.label16.Size = new System.Drawing.Size(73, 13);
             this.label16.TabIndex = 35;
-            this.label16.Text = "prestige_cost";
+            this.label16.Text = "Prestige Cost*";
             // 
             // PrestigeCostText
             // 
@@ -351,15 +351,15 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(310, 161);
+            this.label14.Location = new System.Drawing.Point(335, 132);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(47, 13);
+            this.label14.Size = new System.Drawing.Size(52, 13);
             this.label14.TabIndex = 37;
-            this.label14.Text = "potential";
+            this.label14.Text = "Potential*";
             // 
             // PotentialText
             // 
-            this.PotentialText.Location = new System.Drawing.Point(392, 158);
+            this.PotentialText.Location = new System.Drawing.Point(392, 129);
             this.PotentialText.Name = "PotentialText";
             this.PotentialText.Size = new System.Drawing.Size(202, 85);
             this.PotentialText.TabIndex = 36;
@@ -374,12 +374,12 @@
             this.label17.TabIndex = 39;
             this.label17.Text = "extra_tech_building_start";
             // 
-            // textBox9
+            // ExtraTechText
             // 
-            this.textBox9.Location = new System.Drawing.Point(957, 165);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 38;
+            this.ExtraTechText.Location = new System.Drawing.Point(957, 165);
+            this.ExtraTechText.Name = "ExtraTechText";
+            this.ExtraTechText.Size = new System.Drawing.Size(100, 20);
+            this.ExtraTechText.TabIndex = 38;
             // 
             // label18
             // 
@@ -390,12 +390,12 @@
             this.label18.TabIndex = 47;
             this.label18.Text = "convert_to_castle\t";
             // 
-            // textBox12
+            // CastleConvertText
             // 
-            this.textBox12.Location = new System.Drawing.Point(957, 77);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 20);
-            this.textBox12.TabIndex = 46;
+            this.CastleConvertText.Location = new System.Drawing.Point(957, 77);
+            this.CastleConvertText.Name = "CastleConvertText";
+            this.CastleConvertText.Size = new System.Drawing.Size(100, 20);
+            this.CastleConvertText.TabIndex = 46;
             // 
             // label19
             // 
@@ -406,12 +406,12 @@
             this.label19.TabIndex = 45;
             this.label19.Text = "convert_to_city";
             // 
-            // textBox13
+            // CityConvertText
             // 
-            this.textBox13.Location = new System.Drawing.Point(957, 51);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(100, 20);
-            this.textBox13.TabIndex = 44;
+            this.CityConvertText.Location = new System.Drawing.Point(957, 51);
+            this.CityConvertText.Name = "CityConvertText";
+            this.CityConvertText.Size = new System.Drawing.Size(100, 20);
+            this.CityConvertText.TabIndex = 44;
             // 
             // label20
             // 
@@ -422,12 +422,12 @@
             this.label20.TabIndex = 43;
             this.label20.Text = "convert_to_temple";
             // 
-            // textBox14
+            // TempleConvertText
             // 
-            this.textBox14.Location = new System.Drawing.Point(957, 103);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(100, 20);
-            this.textBox14.TabIndex = 42;
+            this.TempleConvertText.Location = new System.Drawing.Point(957, 103);
+            this.TempleConvertText.Name = "TempleConvertText";
+            this.TempleConvertText.Size = new System.Drawing.Size(100, 20);
+            this.TempleConvertText.TabIndex = 42;
             // 
             // label21
             // 
@@ -438,29 +438,12 @@
             this.label21.TabIndex = 41;
             this.label21.Text = "convert_to_tribal";
             // 
-            // textBox15
+            // TribalConvertText
             // 
-            this.textBox15.Location = new System.Drawing.Point(957, 129);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(100, 20);
-            this.textBox15.TabIndex = 40;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 431);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 51;
-            this.label1.Text = "Modifiers";
-            // 
-            // ModifierText
-            // 
-            this.ModifierText.Location = new System.Drawing.Point(93, 428);
-            this.ModifierText.Name = "ModifierText";
-            this.ModifierText.Size = new System.Drawing.Size(202, 125);
-            this.ModifierText.TabIndex = 50;
-            this.ModifierText.Text = "";
+            this.TribalConvertText.Location = new System.Drawing.Point(957, 129);
+            this.TribalConvertText.Name = "TribalConvertText";
+            this.TribalConvertText.Size = new System.Drawing.Size(100, 20);
+            this.TribalConvertText.TabIndex = 40;
             // 
             // HoldingCB
             // 
@@ -485,40 +468,48 @@
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(216, 15);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(43, 13);
+            this.label22.Size = new System.Drawing.Size(47, 13);
             this.label22.TabIndex = 53;
-            this.label22.Text = "Holding";
+            this.label22.Text = "Holding*";
             // 
             // ModifierBt
             // 
             this.ModifierBt.Location = new System.Drawing.Point(392, 330);
             this.ModifierBt.Name = "ModifierBt";
-            this.ModifierBt.Size = new System.Drawing.Size(75, 23);
+            this.ModifierBt.Size = new System.Drawing.Size(100, 38);
             this.ModifierBt.TabIndex = 54;
             this.ModifierBt.Text = "Modifiers";
             this.ModifierBt.UseVisualStyleBackColor = true;
             this.ModifierBt.Click += new System.EventHandler(this.ModifierBt_Click);
             // 
+            // ModiText
+            // 
+            this.ModiText.Location = new System.Drawing.Point(498, 249);
+            this.ModiText.Name = "ModiText";
+            this.ModiText.ReadOnly = true;
+            this.ModiText.Size = new System.Drawing.Size(251, 209);
+            this.ModiText.TabIndex = 55;
+            this.ModiText.Text = "";
+            // 
             // NwBuilding
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1118, 565);
+            this.ClientSize = new System.Drawing.Size(1064, 470);
+            this.Controls.Add(this.ModiText);
             this.Controls.Add(this.ModifierBt);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.HoldingCB);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.ModifierText);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.CastleConvertText);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.textBox13);
+            this.Controls.Add(this.CityConvertText);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.textBox14);
+            this.Controls.Add(this.TempleConvertText);
             this.Controls.Add(this.label21);
-            this.Controls.Add(this.textBox15);
+            this.Controls.Add(this.TribalConvertText);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.ExtraTechText);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.PotentialText);
             this.Controls.Add(this.label16);
@@ -543,16 +534,16 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.BuildingNameText);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.AiRepublicModifierText);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.AiFeudalModifierText);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.AiCreationFactorText);
             this.Controls.Add(this.SaveBt);
             this.Controls.Add(this.DescText);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.ScoutingChck);
+            this.Controls.Add(this.PortChck);
+            this.Controls.Add(this.AddNumberChck);
             this.Name = "NwBuilding";
             this.Text = "NwBuilding";
             this.ResumeLayout(false);
@@ -562,17 +553,17 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox AddNumberChck;
+        private System.Windows.Forms.CheckBox PortChck;
+        private System.Windows.Forms.CheckBox ScoutingChck;
         private System.Windows.Forms.RichTextBox DescText;
         private System.Windows.Forms.Button SaveBt;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox AiCreationFactorText;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox AiFeudalModifierText;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox AiRepublicModifierText;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox BuildingNameText;
         private System.Windows.Forms.Label label6;
@@ -597,19 +588,18 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.RichTextBox PotentialText;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox ExtraTechText;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox CastleConvertText;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox CityConvertText;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox TempleConvertText;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox ModifierText;
+        private System.Windows.Forms.TextBox TribalConvertText;
         private System.Windows.Forms.ComboBox HoldingCB;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button ModifierBt;
+        private System.Windows.Forms.RichTextBox ModiText;
     }
 }

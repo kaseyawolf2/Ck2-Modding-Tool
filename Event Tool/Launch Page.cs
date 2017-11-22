@@ -28,6 +28,7 @@ namespace Ck2ModdingTool
             ModNameText.Text = ModNameText.Text.Replace(" ", "_");
             Program.Tags = TagText.Text;
             Program.Modname = ModNameText.Text.Replace(" ", "_");
+            Program.Makenamespace();
 
             string ModPath = Program.ModsFolderPath + @"\" + Program.Modname + @".mod";
 

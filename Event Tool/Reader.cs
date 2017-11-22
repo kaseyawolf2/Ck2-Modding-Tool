@@ -10,46 +10,46 @@ namespace Ck2ModdingTool
     {
         // Use this for initialization
         #region Mod Info
-                public static void LoadModInfo()
+        public static void LoadModInfo()
+        {
+            //prevents the folder path being spamed with files if there is no file there
+            string dir = Program.ModsFolderPath + @"\" + Program.Modname + @"\ModInfo.xml";
+            if (File.Exists(dir))
+            {
+                Program.ModInfo.Clear();
+                using (StreamReader sr = new StreamReader(dir))
                 {
-                    //prevents the folder path being spamed with files if there is no file there
-                    string dir = Program.ModsFolderPath + @"\" + Program.Modname + @"\ModInfo.xml";  
-                    if (File.Exists(dir))
-                    {
-                        Program.ModInfo.Clear();
-                        using (StreamReader sr = new StreamReader(dir))
-                        {                    
-                            Program.ModInfo.Add(new Program.ModInfoClass { ModInfoName = sr.ReadLine() });                    
-                            Program.ModInfo[0].PicName = sr.ReadLine();                   
-                            Program.ModInfo[0].Tags = sr.ReadLine();                  
-                        }
-                    }
-                    else
-                    {
-                        System.Diagnostics.Debug.WriteLine("No File Path Found");
-                        return;
-                    }
+                    Program.ModInfo.Add(new Program.ModInfoClass { ModInfoName = sr.ReadLine() });
+                    Program.ModInfo[0].PicName = sr.ReadLine();
+                    Program.ModInfo[0].Tags = sr.ReadLine();
                 }
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("No File Path Found");
+                return;
+            }
+        }
 
-                public static void SaveModInfo(string dir, List<Program.ModInfoClass> list)
+        public static void SaveModInfo(string dir, List<Program.ModInfoClass> list)
+        {
+            if (File.Exists(dir))
+            {
+                using (StreamWriter sw = new StreamWriter(dir))
                 {
-                    if (File.Exists(dir))
+                    foreach (Program.ModInfoClass C in list)
                     {
-                        using (StreamWriter sw = new StreamWriter(dir))
-                        {
-                            foreach (Program.ModInfoClass C in list)
-                            {
-                                sw.WriteLine(C.ToString());
-                            }
-                        }
-                    }
-                    else
-                    {
-                        System.Diagnostics.Debug.WriteLine("No File Path Found");
-                        return;
+                        sw.WriteLine(C.ToString());
                     }
                 }
-                #endregion
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("No File Path Found");
+                return;
+            }
+        }
+        #endregion
 
         #region Event Info
         public static void LoadEventInfo()
@@ -58,7 +58,7 @@ namespace Ck2ModdingTool
             string dir = Program.CurrentModFolderPath + @"\events\Event-Groups.xml";
             if (File.Exists(dir))
             {
-                
+
                 using (StreamReader sr = new StreamReader(dir))
                 {
                     string ign = sr.ReadLine();
@@ -109,14 +109,14 @@ namespace Ck2ModdingTool
 
         #region Building Info
 
-#endregion
+        #endregion
 
         #region Localization
-        public static void SaveLoc(string dir,List<Program.LocalizationList> list)
+        public static void SaveLoc(string dir, List<Program.LocalizationList> list)
         {
             if (File.Exists(dir))
             {
-                using (StreamWriter sw = new StreamWriter(dir,true))
+                using (StreamWriter sw = new StreamWriter(dir, true))
                 {
                     foreach (Program.LocalizationList C in list)
                     {
@@ -142,10 +142,14 @@ namespace Ck2ModdingTool
         }
 
 
-        public static void SaveFileSting(string dir, string FileSting,bool AppendToEnd)
+        public static void SaveFileSting(string dir, string FileSting, bool AppendToEnd, int LineToRemove)
         {
             if (File.Exists(dir))
             {
+                if (LineToRemove != 0)
+                {
+                    DeleteLines(dir, FileSting, LineToRemove);
+                }
                 using (StreamWriter sw = new StreamWriter(dir, AppendToEnd))
                 {
                     sw.WriteLine(FileSting);
@@ -169,6 +173,13 @@ namespace Ck2ModdingTool
                 }
             }
         }
+
+        public static void DeleteLines (string dir, string FileSting, int LineToRemove)
+        {
+            var lines = File.ReadAllLines(dir+@"\"+FileSting);
+            File.WriteAllLines((dir + @"\" + FileSting), lines.Take(lines.Length - LineToRemove));
+        }
+
         public static void CreateFolder(string Path)
         {
             Directory.CreateDirectory(Path);

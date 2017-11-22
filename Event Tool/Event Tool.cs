@@ -28,7 +28,7 @@ namespace Ck2ModdingTool
 
             string dir = Program.CurrentModFolderPath + @"\events\" + EveGroupBox.Text + ".txt";
             //Save Event
-            Reader.SaveFileSting(dir, ParseEvent(),true);
+            Reader.SaveFileSting(dir, ParseEvent(),true,0);
             Program.EventInfo.Find(x => x.EventGroup == EveGroupBox.Text).NumInGroup ++;
 
             //Adding Localization

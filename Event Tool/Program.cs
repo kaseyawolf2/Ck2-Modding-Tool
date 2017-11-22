@@ -278,7 +278,7 @@ namespace Ck2ModdingTool
             //Technology modifiers
             Modifiers.Add(new WordList() { Word = "tech_growth_modifier" });
             Modifiers.Add(new WordList() { Word = "commander_limit" });
-            Modifiers.Add(new WordList() { Word = "tech_growth_modifier_<tech_type>" });
+            //Modifiers.Add(new WordList() { Word = "tech_growth_modifier_<tech_type>" });
             //Modifiers.Add(new WordList() { Word = "<tech_type>_techpoints" });
             //Trade modifiers
             Modifiers.Add(new WordList() { Word = "max_tradeposts" });
@@ -358,7 +358,7 @@ namespace Ck2ModdingTool
             {
                 Reader.CreateFile(ModsFolderPath, ModFileName);
             }
-            Reader.SaveFileSting(CurrentModFolderPath + ".mod", MakeModfile(),false);
+            Reader.SaveFileSting(CurrentModFolderPath + ".mod", MakeModfile(),false,0);
 
             // Creating ModInfo File
             MakeModInfo();
