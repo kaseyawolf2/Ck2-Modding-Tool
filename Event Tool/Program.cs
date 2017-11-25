@@ -9,7 +9,7 @@ namespace Ck2ModdingTool
     public static class Program
     {
         /// <summary>
-        /// The main entry point for the application.
+        /// The main entry point for the application.test
         /// </summary>
 
         #region Vars
