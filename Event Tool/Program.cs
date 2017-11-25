@@ -16,8 +16,9 @@ namespace Ck2ModdingTool
         //Static Forms
         public static Launch_Page LP;
             public static NwEvent NE;
-                public static MoreLangs EML;
+                public static MoreLangs ML;
             public static NwBuilding NB;
+            public static NwArtifact NA;
         public static ModifiersPage MP;
 
         //Mod Loaded
@@ -118,11 +119,15 @@ namespace Ck2ModdingTool
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             LP = new Launch_Page();
-        Application.Run(LP);
+            Application.Run(LP);
         }
 
         static void Prestart()
         {
+            if (!System.IO.File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Paradox Interactive\Crusader Kings II"))
+            {
+                MessageBox.Show("Cursader Kings 2 not found", "No Path", MessageBoxButtons.OK);
+            }
             Ck2Path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Paradox Interactive\Crusader Kings II";
             #region Adding Modifiers to List
             #region Full modifiers

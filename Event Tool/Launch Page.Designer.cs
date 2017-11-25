@@ -128,9 +128,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(11, 67);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 13);
+            this.label4.Size = new System.Drawing.Size(58, 13);
             this.label4.TabIndex = 10;
-            this.label4.Text = "Mod Folder";
+            this.label4.Text = "Ck2 Folder";
             // 
             // ModFolder
             // 
@@ -138,7 +138,7 @@
             this.ModFolder.Name = "ModFolder";
             this.ModFolder.Size = new System.Drawing.Size(102, 20);
             this.ModFolder.TabIndex = 11;
-            this.ModFolder.Text = "Select Mod Folder";
+            this.ModFolder.Text = "Select CK2 Folder";
             this.ModFolder.UseVisualStyleBackColor = true;
             this.ModFolder.Click += new System.EventHandler(this.ModFolder_Click);
             // 

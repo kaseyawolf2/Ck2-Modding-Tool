@@ -153,12 +153,33 @@ namespace Ck2ModdingTool
 
         }
 
+        private void BtNwArtifact_Click(object sender, EventArgs e)
+        {
+            Program.NA = new NwArtifact();
+            if (!Program.ModLoaded)
+            {
+                MessageBox.Show("Please Load/Create a Mod", "No Mod Data", MessageBoxButtons.OK);
+                return;
+            }
+            if (!System.IO.File.Exists(Program.CurrentModFolderPath + @"\common"))
+            {
+                Reader.CreateFolder(Program.CurrentModFolderPath + @"\common");
+            }
+            if (!System.IO.File.Exists(Program.CurrentModFolderPath + @"\common\artifacts"))
+            {
+                Reader.CreateFolder(Program.CurrentModFolderPath + @"\common\artifacts");
+            }
+            if (!System.IO.File.Exists(Program.CurrentModFolderPath + @"\localisation"))
+            {
+                Reader.CreateFolder(Program.CurrentModFolderPath + @"\localisation");
+            }
+
+            Program.NB.Show();
+        }
+
 
         #endregion
 
-        private void BtNwArtifact_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

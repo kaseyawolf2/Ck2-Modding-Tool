@@ -390,13 +390,13 @@ border = {21}";
 
         private void MoreLangs_Click(object sender, EventArgs e)
         {
-            Program.EML = new MoreLangs();
-            Program.EML.EnglishText.Text = DescText.Text;
-            Program.EML.Eng1.Text = Opt1BtText.Text;
-            Program.EML.Eng2.Text = Opt2BtText.Text;
-            Program.EML.Eng3.Text = Opt3BtText.Text;
-            Program.EML.Eng4.Text = Opt4BtText.Text;
-            Program.EML.Show();
+            Program.ML = new MoreLangs();
+            Program.ML.EnglishText.Text = DescText.Text;
+            Program.ML.Eng1.Text = Opt1BtText.Text;
+            Program.ML.Eng2.Text = Opt2BtText.Text;
+            Program.ML.Eng3.Text = Opt3BtText.Text;
+            Program.ML.Eng4.Text = Opt4BtText.Text;
+            Program.ML.Show();
         }
         public static void UpdateFromLoc()
         {
