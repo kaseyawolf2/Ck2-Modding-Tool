@@ -7,20 +7,7 @@ namespace Ck2ModdingTool
     {
         public MoreLangs()
         {
-            Program.ML.FormClosing += new FormClosingEventHandler(MLClosed);
-
             InitializeComponent();
-        }
-
-        private void MLClosed(object sender, EventArgs e)
-        {
-            Program.ML.FormClosing -= new FormClosingEventHandler(MLClosed);
-
-            System.Diagnostics.StackTrace stackTrace = new System.Diagnostics.StackTrace();
-            System.Diagnostics.Debug.WriteLine(stackTrace.GetFrame(1).GetFileName().ToString());
-
-
-
         }
 
         private void ExitBt_Click_1(object sender, EventArgs e)
